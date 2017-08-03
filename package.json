@@ -1,0 +1,24 @@
+{
+  "name": "webpack3.x-demo",
+  "version": "0.0.1",
+  "description": "webpack v3.x 版本的 demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weiqinl/webpack3.x-demo.git"
+  },
+  "keywords": [
+    "webpack",
+    "webpack3.0",
+    "weiqinl"
+  ],
+  "author": "weiqinl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weiqinl/webpack3.x-demo/issues"
+  },
+  "homepage": "https://github.com/weiqinl/webpack3.x-demo#readme"
+}
