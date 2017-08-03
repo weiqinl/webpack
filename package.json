@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/weiqinl/webpack3.x-demo/issues"
   },
-  "homepage": "https://github.com/weiqinl/webpack3.x-demo#readme"
+  "homepage": "https://github.com/weiqinl/webpack3.x-demo#readme",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "webpack": "^3.4.1"
+  }
 }
