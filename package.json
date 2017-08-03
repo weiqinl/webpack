@@ -4,6 +4,7 @@
   "description": "webpack v3.x 版本的 demo",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
