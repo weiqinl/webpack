@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import printMe from './print.js';
+import Library from './library';
 
 function component() {
 	var element = document.createElement('div');
@@ -17,3 +18,10 @@ function component() {
 }
 
 document.body.appendChild(component());
+
+if (module.hot) {
+	module.hot.accept('./library', function() {
+		console.log('Accepting the updated library module!');
+		Library.log();
+	})
+}
