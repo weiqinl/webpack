@@ -5,8 +5,8 @@ const webpack = require('webpack');
 
 module.exports = {
 	entry: {
-		app: './src/index.js',
-		print: './src/print.js',
+		index: './src/index.js',
+		another: './src/another-module.js',
 	},
 	devtool: 'inline-source-map',
 	devServer: {
@@ -17,9 +17,12 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(['dist']),//清理dist文件夹
 		new HtmlWebpackPlugin({
-			title: 'Output Management-weiqinl'
+			title: 'Code Splitting-weiqinl'
 		}),
-		new webpack.HotModuleReplacementPlugin() //启用HMR
+		new webpack.HotModuleReplacementPlugin(), //启用HMR
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'common'  //指定common包的名字 Specify the common bundle's name.
+		})
 	],
 	output: {
 		filename: '[name].bundle.js',
