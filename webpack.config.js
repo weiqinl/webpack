@@ -5,8 +5,7 @@ const webpack = require('webpack');
 
 module.exports = {
 	entry: {
-		index: './src/index.js',
-		another: './src/another-module.js',
+		index: './src/index.js'
 	},
 	devtool: 'inline-source-map',
 	devServer: {
@@ -20,12 +19,10 @@ module.exports = {
 			title: 'Code Splitting-weiqinl'
 		}),
 		new webpack.HotModuleReplacementPlugin(), //启用HMR
-		new webpack.optimize.CommonsChunkPlugin({
-			name: 'common'  //指定common包的名字 Specify the common bundle's name.
-		})
 	],
 	output: {
 		filename: '[name].bundle.js',
+		chunkFilename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist')
 	},
 	module: {
