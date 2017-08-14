@@ -4,9 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-	entry: {
-		index: './src/index.js'
-	},
+	entry: './src/index.js',
 	devtool: 'inline-source-map',//此选项控制是否生成，以及如何生成 source map。
 	devServer: {
 		contentBase: path.resolve(__dirname, 'dist'), //此配置告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
@@ -18,10 +16,10 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Caching-weiqinl'
 		}),
-		new webpack.HotModuleReplacementPlugin(), //启用HMR
+		// new webpack.HotModuleReplacementPlugin(), //启用HMR
 	],
 	output: {
-		filename: '[name].[hash].js',
+		filename: '[name].[chunkhash].js', // chunkhash:8 表示截取chunkhash生成的前8个字符(默认生成20个字符)
 		chunkFilename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist')
 	},
