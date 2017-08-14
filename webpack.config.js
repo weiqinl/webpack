@@ -4,11 +4,15 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: {
+		main: './src/index.js',
+		vendor: [
+			'lodash'
+		]},
 	devtool: 'inline-source-map',//此选项控制是否生成，以及如何生成 source map。
 	devServer: {
 		contentBase: path.resolve(__dirname, 'dist'), //此配置告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
-		hot: true, //告诉dev-server 我们在使用 HMR
+		hot: false, //告诉dev-server 我们在使用 HMR
 		publicPath: '/'
 	},
 	plugins: [
@@ -16,6 +20,12 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Caching-weiqinl'
 		}),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor'
+		}),// vendor 实例，必须在runtime 实例之前
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'runtime'
+		})
 		// new webpack.HotModuleReplacementPlugin(), //启用HMR
 	],
 	output: {
