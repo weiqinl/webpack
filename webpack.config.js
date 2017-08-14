@@ -7,7 +7,7 @@ module.exports = {
 	entry: {
 		index: './src/index.js'
 	},
-	devtool: 'inline-source-map',
+	devtool: 'inline-source-map',//此选项控制是否生成，以及如何生成 source map。
 	devServer: {
 		contentBase: path.resolve(__dirname, 'dist'), //此配置告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
 		hot: true, //告诉dev-server 我们在使用 HMR
@@ -16,12 +16,12 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(['dist']),//清理dist文件夹
 		new HtmlWebpackPlugin({
-			title: 'Code Splitting-weiqinl'
+			title: 'Caching-weiqinl'
 		}),
 		new webpack.HotModuleReplacementPlugin(), //启用HMR
 	],
 	output: {
-		filename: '[name].bundle.js',
+		filename: '[name].[hash].js',
 		chunkFilename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist')
 	},
