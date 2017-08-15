@@ -4,11 +4,22 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: {
+		main: './src/index.js',
+		vendor: [
+			'lodash'
+		]
+	},
 	plugins: [
 		new CleanWebpackPlugin(['dist']),//清理dist文件夹
 		new HtmlWebpackPlugin({
 			title: 'Caching-test-weiqinl'
+		}),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor'
+		}),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'runtime'
 		})
 	],
 	output: {

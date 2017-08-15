@@ -28,7 +28,7 @@ https://github.com/weiqinl/webpack3.x-demo/issues
 http://weiqinl.com
 
 
-Output Filenames
+## Output Filenames
 ```
 Administrator@liuweiqin MINGW64 /e/project/web/webpack/webpack3.x-demo (test-caching)
 $ npm run build
@@ -83,3 +83,56 @@ Child html-webpack-plugin for "index.html":
 ```
 
 
+## 提取模版[Extracting Boilerplate]
+
+```
+Administrator@liuweiqin MINGW64 /e/project/web/webpack/webpack3.x-demo (test-caching)
+$ npm run build
+
+> webpack3.x-demo@0.0.1 build E:\project\web\webpack\webpack3.x-demo
+> webpack
+
+clean-webpack-plugin: E:\project\web\webpack\webpack3.x-demo\dist has been removed.
+Hash: 18fee412ab73bda2c2bf
+Version: webpack 3.5.4
+Time: 1248ms
+                          Asset       Size  Chunks                    Chunk Names
+   main.10d41db9ba4d8fdd23af.js     542 kB       0  [emitted]  [big]  main
+runtime.0165e4f82c498af2fe87.js    5.82 kB       1  [emitted]         runtime
+                     index.html  288 bytes          [emitted]
+   [0] ./src/index.js 236 bytes {0} [built]
+   [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+    + 1 hidden module
+Child html-webpack-plugin for "index.html":
+     1 asset
+       [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+       [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+        + 2 hidden modules
+
+Administrator@liuweiqin MINGW64 /e/project/web/webpack/webpack3.x-demo (test-caching)
+$ npm run build
+
+> webpack3.x-demo@0.0.1 build E:\project\web\webpack\webpack3.x-demo
+> webpack
+
+clean-webpack-plugin: E:\project\web\webpack\webpack3.x-demo\dist has been removed.
+Hash: 8203443e0e87ced468d3
+Version: webpack 3.5.4
+Time: 1329ms
+                          Asset       Size  Chunks                    Chunk Names
+ vendor.8196d409d2f988123318.js     541 kB       0  [emitted]  [big]  vendor
+   main.56a95c6c54f6691e32c9.js  691 bytes       1  [emitted]         main
+runtime.c4aa82d808b35a81a522.js    5.85 kB       2  [emitted]         runtime
+                     index.html  365 bytes          [emitted]
+   [1] ./src/index.js 236 bytes {1} [built]
+   [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+   [4] multi lodash 28 bytes {0} [built]
+    + 1 hidden module
+Child html-webpack-plugin for "index.html":
+     1 asset
+       [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+       [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+        + 2 hidden modules
+```
