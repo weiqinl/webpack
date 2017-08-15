@@ -8,7 +8,7 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(['dist']),//清理dist文件夹
 		new HtmlWebpackPlugin({
-			title: 'Caching-weiqinl'
+			title: 'Caching-test-weiqinl'
 		})
 	],
 	output: {
