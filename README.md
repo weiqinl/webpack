@@ -26,3 +26,60 @@ webpack3.0 版本 的 demo
 https://github.com/weiqinl/webpack3.x-demo/issues
 
 http://weiqinl.com
+
+
+Output Filenames
+```
+Administrator@liuweiqin MINGW64 /e/project/web/webpack/webpack3.x-demo (test-caching)
+$ npm run build
+
+> webpack3.x-demo@0.0.1 build E:\project\web\webpack\webpack3.x-demo
+> webpack
+
+clean-webpack-plugin: E:\project\web\webpack\webpack3.x-demo\dist has been removed.
+Hash: e9b9ab0a7ad8f83e4c03
+Version: webpack 3.5.4
+Time: 1217ms
+                       Asset       Size  Chunks                    Chunk Names
+main.be796062c9ddd8c1b227.js     544 kB       0  [emitted]  [big]  main
+                  index.html  210 bytes          [emitted]
+   [0] ./src/index.js 236 bytes {0} [built]
+   [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+    + 1 hidden module
+Child html-webpack-plugin for "index.html":
+     1 asset
+       [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+       [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+        + 2 hidden modules
+
+Administrator@liuweiqin MINGW64 /e/project/web/webpack/webpack3.x-demo (test-caching)
+$ git status
+On branch test-caching
+nothing to commit, working tree clean
+
+Administrator@liuweiqin MINGW64 /e/project/web/webpack/webpack3.x-demo (test-caching)
+$ npm run build
+
+> webpack3.x-demo@0.0.1 build E:\project\web\webpack\webpack3.x-demo
+> webpack
+
+clean-webpack-plugin: E:\project\web\webpack\webpack3.x-demo\dist has been removed.
+Hash: e9b9ab0a7ad8f83e4c03
+Version: webpack 3.5.4
+Time: 1186ms
+                       Asset       Size  Chunks                    Chunk Names
+main.be796062c9ddd8c1b227.js     544 kB       0  [emitted]  [big]  main
+                  index.html  210 bytes          [emitted]
+   [0] ./src/index.js 236 bytes {0} [built]
+   [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+    + 1 hidden module
+Child html-webpack-plugin for "index.html":
+     1 asset
+       [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+       [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+        + 2 hidden modules
+```
+
+
