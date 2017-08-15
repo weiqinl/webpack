@@ -136,3 +136,39 @@ Child html-webpack-plugin for "index.html":
        [3] (webpack)/buildin/module.js 517 bytes {0} [built]
         + 2 hidden modules
 ```
+### 模块标识符[Module Identifiers]
+
+```
+Administrator@liuweiqin MINGW64 /e/project/web/webpack/webpack3.x-demo (test-caching)
+$ npm run build
+
+> webpack3.x-demo@0.0.1 build E:\project\web\webpack\webpack3.x-demo
+> webpack
+
+clean-webpack-plugin: E:\project\web\webpack\webpack3.x-demo\dist has been removed.
+Hash: 6498143da7fe96e5c469
+Version: webpack 3.5.4
+Time: 1238ms
+                          Asset       Size  Chunks                    Chunk Names
+ vendor.a7561fb0e9a071baadb9.js     541 kB       0  [emitted]  [big]  vendor
+   main.b80ddbf3805c0fb71cbb.js    1.13 kB       1  [emitted]         main
+runtime.342e7d5c587248f314c4.js    5.85 kB       2  [emitted]         runtime
+                     index.html  365 bytes          [emitted]
+   [1] ./src/index.js 327 bytes {1} [built]
+   [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+   [4] ./src/print.js 61 bytes {1} [built]
+   [5] multi lodash 28 bytes {0} [built]
+    + 1 hidden module
+Child html-webpack-plugin for "index.html":
+     1 asset
+       [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+       [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+        + 2 hidden modules
+
+```
+
+……我们可以看到这三个文件的 hash 都变化了。这是因为每个 module.id 会基于默认的解析顺序(resolve order)进行增量。也就是说，当解析顺序发生变化，ID 也会随之改变。因此，简要概括：
+main bundle 会随着自身的新增内容的修改，而发生变化。
+vendor bundle 会随着自身的 module.id 的修改，而发生变化。
+runtime bundle 会因为当前包含一个新模块的引用，而发生变化。
