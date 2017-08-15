@@ -20,6 +20,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Caching-weiqinl'
 		}),
+		new webpack.HashedModuleIdsPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor'
 		}),// vendor 实例，必须在runtime 实例之前
@@ -30,7 +31,7 @@ module.exports = {
 	],
 	output: {
 		filename: '[name].[chunkhash].js', // chunkhash:8 表示截取chunkhash生成的前8个字符(默认生成20个字符)
-		chunkFilename: '[name].bundle.js',
+		// chunkFilename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist')
 	},
 	module: {

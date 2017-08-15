@@ -16,11 +16,12 @@ webpack3.0 版本 的 demo
 
 
 ## Q&A
-1:Q:关于[chunkhash]不能与HMR同时使用的问题  
+### Q1:关于[chunkhash]不能与HMR同时使用的问题  
 	A:在开发环境中，使用HMR来使开发过程更顺畅, 那么就不使用chunkhash, 而是使用hash来替换。  
 		在生产环境中，使用chunkhash，不必使用HMR。  
 		你也可以使用一个三元运算符来写。filename: `[name]${isDev ? '' : '[chunkhash:8]'}.js`
-
+### Q2: `runtime` bundle会因为当前包含一个新模块的引用，而发生变化。而有时候，引入/删除新模块，并没有引起hash变化。  
+A：可能原因，设置了output.chunkFilename: '[name].bundle.js',  
 
 可以提issues:
 https://github.com/weiqinl/webpack3.x-demo/issues
