@@ -2,7 +2,15 @@
 webpack3.4.1-demo
 webpack3.0 版本 的 demo
 
-一步步告诉你，每个模版的功能点  
+## 安装
+
+## 起步 
+
+## 管理资源
+
+## 管理输出
+
+## 开发
 
 
 ## 模块解释
@@ -12,7 +20,8 @@ webpack3.0 版本 的 demo
 	CleanWebpackPlugin 清除webpack打包的文件夹  
 ### CommonsChunkPlugin
 	CommonsChunkPlugin可以用于将模块分离到单独的文件中.  
-### 
+### ProvidePlugin
+	ProvidePlugin 可以将模块作为一个变量，被webpack在其他每个模块中引用。只有你需要使用此变量的时候，这个模块才会被 require 进来。
 
 
 ## Q&A
