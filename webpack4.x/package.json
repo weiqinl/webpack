@@ -1,0 +1,31 @@
+{
+  "name": "webpack4.x",
+  "version": "1.0.0",
+  "description": "webpack4.x 由浅入深构建世界",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-cli",
+    "构建",
+    "打包",
+    "nodejs"
+  ],
+  "author": "weiqinl<772863869@qq.com>",
+  "homepage": "https://github.com/weiqinl/webpack",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weiqinl/webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/weiqinl/webpack",
+    "email": "772863869@qq.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
