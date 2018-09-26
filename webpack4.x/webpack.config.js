@@ -1,6 +1,6 @@
 const path = require('path') // nodejs模块，处理文件路径
 
-module.exports = { 
+module.exports = {
   entry: './src/index.js', // 入口起点
   output: { //  出口/输出
     filename: 'main.js', // 输出文件名称
@@ -10,6 +10,11 @@ module.exports = {
     rules: [{
       test: /\.css$/,
       use: ['style-loader', 'css-loader']
+    }, {
+      test: /\.(png|svg|jpg|gif)$/,
+      use: [
+        'file-loader'
+      ]
     }]
   }
 }
