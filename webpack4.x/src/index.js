@@ -1,6 +1,6 @@
 function component() {
   let element = document.createElement('div')
-  element.innerHTML = 'Hello webpack'
+  element.innerHTML = 'Hello webpack' + new Date()
   return element
 }
 document.body.appendChild(component())
