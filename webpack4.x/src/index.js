@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import printMe from './print.js'
 import './styles.css'
 import {
@@ -13,10 +14,10 @@ function component() {
 
   var btn = document.createElement('button')
 
-  element.innerHTML = [
+  element.innerHTML = _.join([
     'Hello webpack! ',
     '5 cubed is equal to ' + cube(5)
-  ].join('\n\n')
+  ], '\n\n')
 
   btn.innerHTML = 'Click me and check the console!'
   btn.onclick = printMe

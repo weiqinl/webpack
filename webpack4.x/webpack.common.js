@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin') // 生成html
 
 module.exports = {
   entry: { // 入口起点
-    app: './src/index.js'
+    app: './src/index.js',
+    another: './src/another-module.js'
   },
   module: {
     rules: [{
@@ -15,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'webpack--production-weiqinl',
+      title: 'webpack--Code-Splitting-weiqinl',
       filename: 'index.html' // 相对于输出目录
     })
   ],
