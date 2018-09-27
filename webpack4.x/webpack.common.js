@@ -7,12 +7,6 @@ module.exports = {
     app: './src/index.js',
     another: './src/another-module.js'
   },
-  module: {
-    rules: [{
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader']
-    }]
-  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
