@@ -24,5 +24,10 @@ module.exports = {
     filename: '[name].bundle.js', // 输出文件名称
     path: path.resolve(__dirname, 'dist'), // 相对publicPath的输出的目录
     publicPath: '/'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   }
 }
