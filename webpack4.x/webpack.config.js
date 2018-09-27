@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin') // 清理文件夹
 const webpack = require('webpack')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: { // 入口起点
     app: './src/index.js'
   },

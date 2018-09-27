@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "webpack4.x 由浅入深构建世界",
   "private": true,
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",

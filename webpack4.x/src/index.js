@@ -1,18 +1,23 @@
 import printMe from './print.js'
 import './styles.css'
+import {
+  cube
+} from './math'
 
 function component() {
-  let element = document.createElement('div')
+  let element = document.createElement('pre')
 
   var btn = document.createElement('button')
 
-  element.innerHTML = 'Hello webpack ' + new Date()
+  element.innerHTML = [
+    'Hello webpack! ',
+    '5 cubed is equal to ' + cube(5)
+  ].join('\n\n')
 
   btn.innerHTML = 'Click me and check the console!'
   btn.onclick = printMe
 
   element.appendChild(btn)
-
 
   return element
 }
@@ -28,7 +33,6 @@ if (module.hot) {
     document.body.appendChild(element)
   })
 }
-
 
 let func = () => {
   console.log('weiqinl')
