@@ -13,7 +13,8 @@ module.exports = {
   },
   output: { //  出口/输出
     filename: '[name].bundle.js', // 输出文件名称
-    path: path.resolve(__dirname, 'dist') // 输出的目录
+    path: path.resolve(__dirname, 'dist'), // 相对publicPath的输出的目录
+    publicPath: '/' // 输出的目录
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
