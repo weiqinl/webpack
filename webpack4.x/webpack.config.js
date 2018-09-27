@@ -8,6 +8,9 @@ module.exports = {
     print: './src/print.js'
   },
   devtool: 'inline-source-map', // source-map 选项
+  devServer: {
+    contentBase: './dist'
+  },
   output: { //  出口/输出
     filename: '[name].bundle.js', // 输出文件名称
     path: path.resolve(__dirname, 'dist') // 输出的目录
