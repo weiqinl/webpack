@@ -1,9 +1,19 @@
 const path = require('path') // nodejs模块，处理文件路径
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js', // 入口起点
+  entry: { // 入口起点
+    index: './src/index.js',
+    print: './src/print.js'
+  },
   output: { //  出口/输出
-    filename: 'main.js', // 输出文件名称
+    filename: '[name].bundle.js', // 输出文件名称
     path: path.resolve(__dirname, 'dist') // 输出的目录
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'webpack-Output-Management-weiqinl',
+      filename: 'index.html' // 相对于输出目录
+    })
+  ]
 }

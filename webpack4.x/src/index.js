@@ -1,7 +1,17 @@
+import printMe from './print.js'
+
 function component() {
   let element = document.createElement('div')
-  
-  element.innerHTML = 'Hello webpack' + new Date()
+
+  var btn = document.createElement('button')
+
+  element.innerHTML = 'Hello webpack ' + new Date()
+
+  btn.innerHTML = 'Click me and check the console!'
+  btn.onclick = printMe
+
+  element.appendChild(btn)
+
 
   return element
 }
