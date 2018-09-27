@@ -4,8 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin') // 生成html
 
 module.exports = {
   entry: { // 入口起点
-    app: './src/index.js',
-    another: './src/another-module.js'
+    index: './src/index.js',
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -16,12 +15,8 @@ module.exports = {
   ],
   output: { //  出口/输出
     filename: '[name].bundle.js', // 输出文件名称
+    chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'), // 相对publicPath的输出的目录
     publicPath: '/'
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
   }
 }
