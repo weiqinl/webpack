@@ -8,26 +8,26 @@ if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!')
 }
 
-function getComponent() {
+async function getComponent() {
   /**
    * 在注释中使用 webpackChunkName。
    * 这样做会导致我们的bundle被命名为 lodash.bundle.js,而不是[id].bundle.js
    */
-  return import( /* webpackChunkName: "lodash" */ 'lodash').then(_ => {
-    let element = document.createElement('div')
-    _ = _.default
+  // return import( /* webpackChunkName: "lodash" */ 'lodash').then(_ => {
+  const element = document.createElement('div')
+  // _ = _.default
+  const _ = await import( /* webpackChunkName: "lodash" */ 'lodash')
 
-    element.innerHTML = _.join(['Hello', 'webpack', '5 cubed is equal to ' + cube(5)], ' ')
+  element.innerHTML = _.join(['Hello', 'webpack', '5 cubed is equal to ' + cube(5)], ' ')
 
-    var btn = document.createElement('button')
+  var btn = document.createElement('button')
 
-    btn.innerHTML = 'Click me and check the console!'
-    btn.onclick = printMe
+  btn.innerHTML = 'Click me and check the console!'
+  btn.onclick = printMe
 
-    element.appendChild(btn)
+  element.appendChild(btn)
 
-    return element
-  }).catch(error => console.log('An error occurred while loading the component', error))
+  return element
 }
 
 getComponent().then(component => {
