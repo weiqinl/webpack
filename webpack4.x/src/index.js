@@ -13,13 +13,21 @@ function getComponent() {
    * 在注释中使用 webpackChunkName。
    * 这样做会导致我们的bundle被命名为 lodash.bundle.js,而不是[id].bundle.js
    */
-  return import(/* webpackChunkName: "lodash" */'lodash').then(_ => {
+  return import( /* webpackChunkName: "lodash" */ 'lodash').then(_ => {
     let element = document.createElement('div')
     _ = _.default
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ').join(['5 cubed is equal to ' + cube(5)], '\n\n')
+    element.innerHTML = _.join(['Hello', 'webpack', '5 cubed is equal to ' + cube(5)], ' ')
+
+    var btn = document.createElement('button')
+
+    btn.innerHTML = 'Click me and check the console!'
+    btn.onclick = printMe
+
+    element.appendChild(btn)
+
     return element
-  }).catch(error => 'An error occurred while loading the component', error)
+  }).catch(error => console.log('An error occurred while loading the component', error))
 }
 
 getComponent().then(component => {
