@@ -17,7 +17,8 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: "[name].[hash].css",
       chunkFilename: "[id].[hash].css"
-    })
+    }),
+    new webpack.HashedModuleIdsPlugin()
   ],
   module: {
     rules: [{

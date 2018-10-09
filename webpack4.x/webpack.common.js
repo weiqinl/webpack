@@ -15,8 +15,8 @@ module.exports = {
     })
   ],
   output: { //  出口/输出
-    filename: '[name].[contenthash].js', // 每个输出bundle文件名称(包含入口起点、代码拆分或各种插件创建的多个bundle)
-    chunkFilename: '[name].bundle.js', // 按需加载的chunk的输出文件名称
+    filename: '[name].[hash].js', // 每个输出bundle文件名称(包含入口起点、代码拆分或各种插件创建的多个bundle)
+    chunkFilename: '[name].[contenthash].js', // 按需加载的chunk的输出文件名称
     path: path.resolve(__dirname, 'dist'), // 相对publicPath的输出的目录
     publicPath: '/'
   },

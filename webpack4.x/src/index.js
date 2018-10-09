@@ -4,6 +4,9 @@ import {
 } from './math'
 import _ from 'lodash'
 
+import Print from './print'
+
+
 if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!')
 }
@@ -50,11 +53,13 @@ function component() {
   element.appendChild(br)
   element.appendChild(btn)
 
-  btn.onclick = e =>
-    import(/* webpackChunkName: 'print'*/'./print').then(module => {
-      var print = module.default
-      print()
-    })
+  // btn.onclick = e =>
+  //   import(/* webpackChunkName: 'print'*/'./print').then(module => {
+  //     var print = module.default
+  //     print()
+  //   })
+
+  btn.onclick = Print.bind(null, 'Hello webpack!')
 
   return element
 }
